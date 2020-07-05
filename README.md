@@ -6,3 +6,7 @@ This daily planner is perfect to organize your commitments throughout your work 
 
 ## Screenshot
 ![alt text](Screenshot.PNG)
+
+## Contributor
+
+Shaun Mardones
