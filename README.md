@@ -4,7 +4,7 @@
 This planner is designed to be the perfect work companion to help you organize work and commitments throughout your busy day.
 
 ## Screenshot
-Screenshot.PNG
+[alt text](Screenshot.PNG)
 
 ## Website
 https://smardones.github.io/dailyplanner/
