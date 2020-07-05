@@ -5,4 +5,4 @@
 This daily planner is perfect to organize your commitments throughout your work day!
 
 ## Screenshot
-
+![alt text](Screenshot.PNG)
