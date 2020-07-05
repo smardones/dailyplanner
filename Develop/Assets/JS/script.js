@@ -3,10 +3,11 @@ var tasks = [];
 
 var loadTasks = function() {
     var loadedTasks = JSON.parse(localStorage.getItem("tasks"));
-    
+    console.log(loadedTasks);
     $.each(loadedTasks, function(index, value) {
         createTask(value.hour, value.task);
     })
+    
     
 }
     
@@ -16,9 +17,13 @@ var createTask = function(returnedHour, returnedTask) {
         .text(returnedTask);
     var existingDiv = $("[data-task-hour=" + returnedHour + "]");
     
+    
+
     tasks.push({hour: returnedHour, task: returnedTask})
 
     $(existingDiv).replaceWith(newDiv);
+
+    
     }
 
 
@@ -58,20 +63,22 @@ $(".saveBtn").on("click", function() {
 });
 
 
-// var auditTime = function() {
-//     var hourId = $(".time-block").attr("data-hour");
-
-//     console.log(hourId);
+var auditTime = function() {
     
-//     var currentHour = moment().format("HH");
-//     console.log(currentHour);
+    $(".task-display").each(function() {
+        var hourId = $(this).attr("data-time");
+        var time = moment(hourId, "h:mm A")
 
-    // if (moment(currentHour).isBefore(hourId)) {
-    //         console.log("This works")
-    //     }
+        if (moment().isBefore(time)) {
+        $(this).addClass("future");
+        }
+        else if (moment().isSame(time, "hour")) {
+            $(this).addClass("present");
+        }
+        else {
+            $(this).addClass("past");
+        }
+    })};
 
-    
-// }
-
-// auditTime();
 loadTasks();
+auditTime();
